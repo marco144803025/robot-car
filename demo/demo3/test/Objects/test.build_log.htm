@@ -1,0 +1,290 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yat hin cheng, polytechnic university, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.7.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\marco\OneDrive - The Hong Kong Polytechnic University\poly things\yr3sem2\eie3105\demo\demo3\test\test.uvprojx
+Project File Date:  02/21/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+us.c(10): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void enableTimer1();
+                 ^
+                  void
+us.c(11): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void disableTimer1();
+                  ^
+                   void
+us.c(12): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+int getdistance();
+               ^
+                void
+us.c(1): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(87): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(50): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+us.c(23): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        TIM_TimeBaseInitTypeDef initStructure;
+                                ^
+us.c(43): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        GPIO_InitTypeDef init_gpio;//ECHOOOOOOOOOOOOOOOOOOOOOOOOOO
+                         ^
+us.c(1): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(90): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_usart.h(49): warning: padding size of 'USART_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+us.c(93): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        GPIO_InitTypeDef gpio_init;
+                         ^
+us.c(87): warning: no previous prototype for function 'USART3_init' [-Wmissing-prototypes]
+void USART3_init(void)
+     ^
+us.c(87): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void USART3_init(void)
+^
+static 
+us.c(127): warning: no previous extern declaration for non-static variable 'pulse_start_time' [-Wmissing-variable-declarations]
+volatile uint32_t pulse_start_time = 0;
+                  ^
+us.c(127): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile uint32_t pulse_start_time = 0;
+         ^
+us.c(128): warning: no previous extern declaration for non-static variable 'pulse_end_time' [-Wmissing-variable-declarations]
+volatile uint32_t pulse_end_time = 0;
+                  ^
+us.c(128): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile uint32_t pulse_end_time = 0;
+         ^
+us.c(129): warning: no previous extern declaration for non-static variable 'pulse_started' [-Wmissing-variable-declarations]
+volatile uint8_t pulse_started = 0;
+                 ^
+us.c(129): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile uint8_t pulse_started = 0;
+         ^
+us.c(133): warning: no previous prototype for function 'getDistance' [-Wmissing-prototypes]
+unsigned getDistance(void) {
+         ^
+us.c(133): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned getDistance(void) {
+^
+static 
+us.c(137): warning: no previous prototype for function 'sr04_interrupt' [-Wmissing-prototypes]
+void sr04_interrupt(void) {
+     ^
+us.c(137): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void sr04_interrupt(void) {
+^
+static 
+us.c(145): warning: no previous prototype for function 'init_gpio' [-Wmissing-prototypes]
+void init_gpio(void) {
+     ^
+us.c(145): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void init_gpio(void) {
+^
+static 
+us.c(160): warning: no previous extern declaration for non-static variable 'state' [-Wmissing-variable-declarations]
+unsigned int state=0;
+             ^
+us.c(160): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned int state=0;
+^
+us.c(161): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
+char buffer[50] = {'\0'};
+     ^
+us.c(161): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char buffer[50] = {'\0'};
+^
+us.c(162): warning: no previous extern declaration for non-static variable 'pulseHigh' [-Wmissing-variable-declarations]
+__IO bool pulseHigh = false;
+          ^
+us.c(162): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__IO bool pulseHigh = false;
+     ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+us.c(163): warning: no previous extern declaration for non-static variable 'generate_pulse' [-Wmissing-variable-declarations]
+__IO bool generate_pulse = true;
+          ^
+us.c(163): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__IO bool generate_pulse = true;
+     ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+us.c(164): warning: no previous extern declaration for non-static variable 'pulseWidth' [-Wmissing-variable-declarations]
+__IO u32 pulseWidth = 0;
+         ^
+us.c(164): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__IO u32 pulseWidth = 0;
+     ^
+us.c(165): warning: no previous extern declaration for non-static variable 'captureValue' [-Wmissing-variable-declarations]
+__IO u32 captureValue = 0;
+         ^
+us.c(165): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__IO u32 captureValue = 0;
+     ^
+us.c(173): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                distance = getdistance();
+                         ~ ^~~~~~~~~~~~~
+us.c(191): warning: implicit declaration of function 'enabletimer1' is invalid in C99 [-Wimplicit-function-declaration]
+                        enabletimer1();
+                        ^
+us.c(195): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        CH1.TIM_Pulse =left;//
+                                      ~^~~~
+us.c(206): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        CH2.TIM_Pulse =right;//
+                                      ~^~~~~
+us.c(238): warning: implicit declaration of function 'disabletimer1' is invalid in C99 [-Wimplicit-function-declaration]
+                        disabletimer1();
+                        ^
+us.c(193): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                        TIM_OCInitTypeDef CH1;
+                                          ^
+us.c(244): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  TIM_TimeBaseInitTypeDef timerInitStructure; 
+                          ^
+us.c(296): warning: no previous prototype for function 'enableTimer1' [-Wmissing-prototypes]
+void enableTimer1()
+     ^
+us.c(10): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void enableTimer1();
+     ^
+                  void
+us.c(296): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void enableTimer1()
+                 ^
+us.c(302): warning: no previous prototype for function 'disableTimer1' [-Wmissing-prototypes]
+void disableTimer1()
+     ^
+us.c(11): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void disableTimer1();
+     ^
+                   void
+us.c(302): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void disableTimer1()
+                  ^
+us.c(316): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+void SysTick_Handler()
+     ^
+us.c(316): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_Handler()
+^
+static 
+us.c(316): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void SysTick_Handler()
+                    ^
+34 warnings generated.
+compiling us.c...
+linking...
+.\Objects\test.axf: Error: L6218E: Undefined symbol getdistance (referred from us.o).
+.\Objects\test.axf: Error: L6218E: Undefined symbol enabletimer1 (referred from us.o).
+.\Objects\test.axf: Error: L6218E: Undefined symbol disabletimer1 (referred from us.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 3 error messages.
+".\Objects\test.axf" - 3 Error(s), 34 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: DMA Version: 3.6.0
+   * Component: EXTI Version: 3.6.0
+   * Component: Framework Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+   * Component: SPI Version: 3.6.0
+   * Component: TIM Version: 3.6.0
+   * Component: USART Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/marco/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include
+  C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/system_stm32f10x.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_dma.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_dma.c
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_exti.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_exti.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
+      Source file:   Device/StdPeriph_Driver/src/misc.c
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
+      Include file:  Device/StdPeriph_Driver/inc/misc.h
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_spi.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_spi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_tim.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_usart.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_usart.c
+Target not created.
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

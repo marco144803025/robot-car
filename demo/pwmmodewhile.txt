@@ -1,0 +1,126 @@
+	while(1)
+	{
+		readFloor();
+		DelayMs(3);//can not too fast, maybe need to clear some flag
+		if(PWMmode==2)//___________forward
+		{
+			 ch1pulse =51;
+			 ch2pulse =52;
+			 delaytime=200;
+		}
+		if(PWMmode==4)//___________LEFT
+		{
+			 ch1pulse =50;
+			 ch2pulse =60;
+			 delaytime=50;
+		}
+		if(PWMmode==5)//___________RIGHT
+		{
+			 ch1pulse =62;
+			 ch2pulse =52;
+			 delaytime=50;
+		}
+		if(PWMmode==6)//___________HardLeft
+		{
+			ch1pulse =35;
+			ch2pulse =70;
+			delaytime=25;
+		}
+		if(PWMmode==7)//___________HardRIGHT
+		{
+			ch1pulse =72;
+			ch2pulse =37;
+		  delaytime=25;
+		}
+		if(PWMmode==8)//___________ExtremeLeft
+		{
+			ch1pulse =25;
+			ch2pulse =65;
+			delaytime=200;
+		}
+		if(PWMmode==9)//___________ExtremeRight
+		{
+			ch1pulse =62;
+			ch2pulse =0;
+			delaytime=200;
+		}
+		if(PWMmode==10)//__________First turn left to middle
+		{
+			ch1pulse =70;
+			ch2pulse =70;
+			delaytime=500;
+		}
+		if(PWMmode==11)//__________SlowLEFT
+		{
+			 ch1pulse =40;
+			 ch2pulse =50;
+			 delaytime=50;
+		}
+		if(PWMmode==12)//__________SlowRIGHT
+		{
+			ch1pulse =50;
+			ch2pulse =40;
+			delaytime=50;
+		}
+		if(PWMmode==13)//__________Middle Left
+		{
+			ch1pulse =30;
+			ch2pulse =42;
+			delaytime=50;
+		}
+		if(PWMmode==14)//__________ Middle Right
+		{
+			ch1pulse =42;
+			ch2pulse =32;
+			delaytime=50;
+		}
+	
+	
+	//Enable Tim1 CH1 PWM PA8 PA13
+			TIM_OCInitTypeDef CH1;
+			CH1.TIM_OCMode = TIM_OCMode_PWM1;
+			CH1.TIM_Pulse =ch1pulse;//
+			CH1.TIM_OutputState = TIM_OutputState_Enable;
+			CH1.TIM_OCPolarity = TIM_OCPolarity_High;
+			//CH1.TIM_OCIdleState=TIM_OCIdleState_Reset;
+			CH1.TIM_OutputNState = TIM_OutputNState_Disable;//N
+			CH1.TIM_OCNPolarity = TIM_OCNPolarity_Low;//N
+			//CH1.TIM_OCNIdleState=TIM_OCNIdleState_Reset;//N
+			TIM_OC1Init(TIM1, &CH1);//PA8 
+			
+			TIM_OCInitTypeDef CH2;
+			CH2.TIM_OCMode = TIM_OCMode_PWM1;
+			CH2.TIM_Pulse =ch2pulse;
+			CH2.TIM_OutputState = TIM_OutputState_Disable;
+			CH2.TIM_OCPolarity = TIM_OCPolarity_Low;
+			//CH2.TIM_OCIdleState=TIM_OCIdleState_Reset;
+			CH2.TIM_OutputNState = TIM_OutputNState_Enable;//N
+			CH2.TIM_OCNPolarity = TIM_OCNPolarity_High;//N
+			//CH2.TIM_OCNIdleState=TIM_OCNIdleState_Reset;//N
+			TIM_OC2Init(TIM1, &CH2);//PA9
+			
+			
+			DelayMs(delaytime);
+			
+			//Enable Tim1 CH1 PWM PA8 PA13
+			CH1.TIM_OCMode = TIM_OCMode_PWM1;
+			CH1.TIM_Pulse =0;//
+			CH1.TIM_OutputState = TIM_OutputState_Enable;
+			CH1.TIM_OCPolarity = TIM_OCPolarity_High;
+			//CH1.TIM_OCIdleState=TIM_OCIdleState_Reset;
+			CH1.TIM_OutputNState = TIM_OutputNState_Disable;//N
+			CH1.TIM_OCNPolarity = TIM_OCNPolarity_Low;//N
+			//CH1.TIM_OCNIdleState=TIM_OCNIdleState_Reset;//N
+			TIM_OC1Init(TIM1, &CH1);//PA8 
+			
+			CH2.TIM_OCMode = TIM_OCMode_PWM1;
+			CH2.TIM_Pulse =0;//
+			CH2.TIM_OutputState = TIM_OutputState_Disable;
+			CH2.TIM_OCPolarity = TIM_OCPolarity_Low;
+			//CH2.TIM_OCIdleState=TIM_OCIdleState_Reset;
+			CH2.TIM_OutputNState = TIM_OutputNState_Enable;//N
+			CH2.TIM_OCNPolarity = TIM_OCNPolarity_High;//N
+			//CH2.TIM_OCNIdleState=TIM_OCNIdleState_Reset;//N
+			TIM_OC2Init(TIM1, &CH2);//PA9
+			PWMmode=-1;
+		}

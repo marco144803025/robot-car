@@ -1,0 +1,186 @@
+void SPI1_IRQHandler() 
+{
+
+	// the received character has all the readings
+	 c = (char) SPI_I2S_ReceiveData(SPI1) & 0xff;
+	
+	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_7) == 1) 
+	{
+	  // Set PA7 to 0 to trigger the shift register
+	  GPIO_ResetBits(GPIOA, GPIO_Pin_7);
+	  // Go to get the next reading
+	  SPI_I2S_SendData(SPI1, 0);
+		
+	} 	else {
+//		if((c&(1<<0)) && (c&(1<<7)) && (repeat == 0)) //reading all 00000000
+//		{
+//			repeat = 1;
+//			count++;
+//		}
+		if(count == 5)
+		{
+			PWMmode = 10;
+			count=6;
+		}else{ if((!(c&(1<<0)) && !(c&(1<<1)) && !(c&(1<<2)) && !(c&(1<<3)) && !(c&(1<<4)) && !(c&(1<<5)) && !(c&(1<<6)) && !(c&(1<<7))) || (!(c&(1<<0)) && !(c&(1<<1)) && !(c&(1<<2)) && !(c&(1<<3)) && !(c&(1<<4)) && !(c&(1<<5)) && !(c&(1<<6)) && (c&(1<<7))))
+		{
+			PWMmode = 8;
+		}else if(!(c&(1<<7)) || !(c&(1<<0))|| !(c&(1<<4))|| !(c&(1<<5)))
+			{
+				repeat = 0;
+			}else if(count == 2 || count == 4) //Slow mode
+			{
+				if(c&(1<<5))
+				{
+					PWMmode = 11;	// Hard Left
+				}else if (c&(1<<4)){
+					PWMmode = 11;	// Left
+				}else if (c&(1<<7)) {
+					PWMmode = 8;	// extreme left
+				}else if (c&(1<<6)) {
+					PWMmode = 8;	// 
+				}else if (c&(1<<3)) {
+					PWMmode = 12;	// 
+				}else if (c&(1<<2)) {
+					PWMmode = 12;	//
+				}else if (c&(1<<1)) {
+					PWMmode = 7;	// Right
+				}else if (c&(1<<0)) {
+					PWMmode = 7;	// Hard right
+				}
+				}else if(c&(1<<7))			//Normal mode
+				{
+					PWMmode = 6;	// Hard Left
+				}else if (c&(1<<6)){
+					PWMmode = 6;	// Left
+				}else if (c&(1<<5)) {
+					PWMmode = 4;	// 
+				}else if (c&(1<<4)) {
+					PWMmode = 4;	// 
+				}else if (c&(1<<3)) {
+					PWMmode = 5;	// 
+				}else if (c&(1<<2)) {
+					PWMmode = 5;	//
+				}else if (c&(1<<1)) {
+					PWMmode = 7;	// Right
+				}else if (c&(1<<0)) {
+					PWMmode = 7;	// Hard right
+				}
+			}
+		if(count == 6)///567 right, 012 left , 34 forward
+		{
+			if(c&(1<<7))			//Middle mode
+			{
+				PWMmode = 14;	// right
+			}else if (c&(1<<0)){
+				PWMmode = 14;	// Right if(PWMmode==14)//__________ Middle Right
+			}else if (c&(1<<6)) {
+				PWMmode = 13;	//left
+			}else if (c&(1<<1)) {
+				PWMmode = 14;	
+			}else if (c&(1<<2)) {
+				PWMmode = 14;	
+			}else if (c&(1<<4)) {
+				PWMmode = 13;	
+			}else if (c&(1<<3)) {
+				PWMmode = 14;	
+			}
+		}
+		
+		{
+			if(c&(1<<0))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}
+			if(c&(1<<1))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<2))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<3))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<4))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<5))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<6))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+			if(c&(1<<7))
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'0');
+			}
+			else
+			{
+			while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);	
+			USART_SendData(USART2,'1');
+			}	
+		
+//	while(USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET);
+//	USART_SendData(USART2, c);
+	while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+	USART_SendData(USART2, '\r');
+	while(USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+	USART_SendData(USART2, '\n');
+	
+	
+	// Check PA7. If it is 1, it means the data is ready
+	
+	  // disable the interrupt because it is not ready
+	  NVIC_DisableIRQ(SPI1_IRQn);
+		}
+		
+	}
+}	

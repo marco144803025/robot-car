@@ -1,0 +1,2462 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yat hin cheng, polytechnic university, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.7.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\marco\OneDrive - The Hong Kong Polytechnic University\poly things\yr3sem2\eie3105\demo\demo3\sr04+RemoteCar\sr04+RemoteCar.uvprojx
+Project File Date:  03/28/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.cpp(3): warning: no previous extern declaration for non-static variable 'SPI_data' [-Wmissing-variable-declarations]
+char SPI_data = 0;
+     ^
+main.cpp(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char SPI_data = 0;
+^
+main.cpp(25): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
+char buffer[30];
+     ^
+main.cpp(25): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char buffer[30];
+^
+main.cpp(26): warning: no previous extern declaration for non-static variable 'rx' [-Wmissing-variable-declarations]
+int rx;
+    ^
+main.cpp(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int rx;
+^
+main.cpp(27): warning: no previous extern declaration for non-static variable 'pwm' [-Wmissing-variable-declarations]
+unsigned int pwm;
+             ^
+main.cpp(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+unsigned int pwm;
+^
+main.cpp(28): warning: no previous extern declaration for non-static variable 'forward' [-Wmissing-variable-declarations]
+int forward = 1;
+    ^
+main.cpp(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int forward = 1;
+^
+main.cpp(29): warning: no previous extern declaration for non-static variable 'back' [-Wmissing-variable-declarations]
+int back = 0;
+    ^
+main.cpp(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int back = 0;
+^
+main.cpp(31): warning: no previous extern declaration for non-static variable 'distance' [-Wmissing-variable-declarations]
+int distance = 0;
+    ^
+main.cpp(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int distance = 0;
+^
+main.cpp(104): warning: unused parameter 'b' [-Wunused-parameter]
+void on_button(bool b) {
+                    ^
+main.cpp(104): warning: no previous prototype for function 'on_button' [-Wmissing-prototypes]
+void on_button(bool b) {
+     ^
+main.cpp(104): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void on_button(bool b) {
+^
+static 
+9 warnings generated.
+compiling main.cpp...
+sr04.cpp(8): warning: no previous prototype for function 'getDistance' [-Wmissing-prototypes]
+unsigned getDistance(void) { return distance / 1050 - 38; } 
+         ^
+sr04.cpp(8): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned getDistance(void) { return distance / 1050 - 38; } 
+^
+static 
+sr04.cpp(12): warning: use of old-style cast [-Wold-style-cast]
+    if (TIM1->CCMR2 == CAPTURE) distance = 0;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(12): warning: use of old-style cast [-Wold-style-cast]
+    if (TIM1->CCMR2 == CAPTURE) distance = 0;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(13): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER &= ~TIM_CCER_CC3E;     //disable capture 
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(13): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER &= ~TIM_CCER_CC3E;     //disable capture 
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(13): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER &= ~TIM_CCER_CC3E;     //disable capture 
+                   ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4417): note: expanded from macro 'TIM_CCER_CC3E'
+#define  TIM_CCER_CC3E                       ((uint16_t)0x0100)            /*!< Capture/Compare 3 output enable */
+                                              ^         ~~~~~~
+sr04.cpp(14): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCR3 = 44820;               //10us
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(14): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCR3 = 44820;               //10us
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCMR2 = PWM;
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCMR2 = PWM;
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER |= TIM_CCER_CC3NE;     //enable o/p pin
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER |= TIM_CCER_CC3NE;     //enable o/p pin
+    ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+    TIM1->CCER |= TIM_CCER_CC3NE;     //enable o/p pin
+                  ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4419): note: expanded from macro 'TIM_CCER_CC3NE'
+#define  TIM_CCER_CC3NE                      ((uint16_t)0x0400)            /*!< Capture/Compare 3 Complementary output enable */
+                                              ^         ~~~~~~
+sr04.cpp(19): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER &= ~TIM_CCER_CC3NE;  //disable o/p pin
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(19): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER &= ~TIM_CCER_CC3NE;  //disable o/p pin
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(19): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER &= ~TIM_CCER_CC3NE;  //disable o/p pin
+                     ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4419): note: expanded from macro 'TIM_CCER_CC3NE'
+#define  TIM_CCER_CC3NE                      ((uint16_t)0x0400)            /*!< Capture/Compare 3 Complementary output enable */
+                                              ^         ~~~~~~
+sr04.cpp(20): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCMR2 = CAPTURE;
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(20): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCMR2 = CAPTURE;
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(21): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER |= TIM_CCER_CC3E;    //enable capture 
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(21): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER |= TIM_CCER_CC3E;    //enable capture 
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(21): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->CCER |= TIM_CCER_CC3E;    //enable capture 
+                    ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4417): note: expanded from macro 'TIM_CCER_CC3E'
+#define  TIM_CCER_CC3E                       ((uint16_t)0x0100)            /*!< Capture/Compare 3 output enable */
+                                              ^         ~~~~~~
+sr04.cpp(22): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->SR &= ~TIM_SR_CC3IF;
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(22): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->SR &= ~TIM_SR_CC3IF;
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(22): warning: use of old-style cast [-Wold-style-cast]
+      TIM1->SR &= ~TIM_SR_CC3IF;
+                   ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4286): note: expanded from macro 'TIM_SR_CC3IF'
+#define  TIM_SR_CC3IF                        ((uint16_t)0x0008)            /*!< Capture/Compare 3 interrupt Flag */
+                                              ^         ~~~~~~
+sr04.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+      if (TIM1->SR & TIM_SR_CC3IF) {
+          ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+      if (TIM1->SR & TIM_SR_CC3IF) {
+          ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+      if (TIM1->SR & TIM_SR_CC3IF) {
+                     ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4286): note: expanded from macro 'TIM_SR_CC3IF'
+#define  TIM_SR_CC3IF                        ((uint16_t)0x0008)            /*!< Capture/Compare 3 interrupt Flag */
+                                              ^         ~~~~~~
+sr04.cpp(25): warning: use of old-style cast [-Wold-style-cast]
+        distance = phase * 45000 + TIM1->CCR3;
+                                   ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(25): warning: use of old-style cast [-Wold-style-cast]
+        distance = phase * 45000 + TIM1->CCR3;
+                                   ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+        if (TIM1->CCR3 > TIM1->CNT) distance -= 45000;
+            ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+        if (TIM1->CCR3 > TIM1->CNT) distance -= 45000;
+            ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+        if (TIM1->CCR3 > TIM1->CNT) distance -= 45000;
+                         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+        if (TIM1->CCR3 > TIM1->CNT) distance -= 45000;
+                         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->SR &= ~TIM_SR_CC3IF;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->SR &= ~TIM_SR_CC3IF;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->SR &= ~TIM_SR_CC3IF;
+                     ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4286): note: expanded from macro 'TIM_SR_CC3IF'
+#define  TIM_SR_CC3IF                        ((uint16_t)0x0008)            /*!< Capture/Compare 3 interrupt Flag */
+                                              ^         ~~~~~~
+sr04.cpp(28): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->CCER &= ~TIM_CCER_CC3E; //disable capture
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(28): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->CCER &= ~TIM_CCER_CC3E; //disable capture
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(28): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->CCER &= ~TIM_CCER_CC3E; //disable capture
+                       ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4417): note: expanded from macro 'TIM_CCER_CC3E'
+#define  TIM_CCER_CC3E                       ((uint16_t)0x0100)            /*!< Capture/Compare 3 output enable */
+                                              ^         ~~~~~~
+sr04.cpp(29): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->CCMR2 = IDLE;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+sr04.cpp(29): warning: use of old-style cast [-Wold-style-cast]
+        TIM1->CCMR2 = IDLE;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+sr04.cpp(10): warning: no previous prototype for function 'sr04' [-Wmissing-prototypes]
+void sr04(unsigned phase) {
+     ^
+sr04.cpp(10): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void sr04(unsigned phase) {
+^
+static 
+42 warnings generated.
+compiling sr04.cpp...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/misc.c(131): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+1 warning generated.
+compiling misc.c...
+button.cpp(5): warning: no previous prototype for function 'read_button' [-Wmissing-prototypes]
+bool read_button(void) { return key; }
+     ^
+button.cpp(5): note: declare 'static' if the function is not intended to be used outside of this translation unit
+bool read_button(void) { return key; }
+^
+static 
+button.cpp(6): warning: no previous prototype for function 'on_button' [-Wmissing-prototypes]
+void __attribute__((weak)) on_button(bool) {}
+                           ^
+button.cpp(6): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void __attribute__((weak)) on_button(bool) {}
+^
+static 
+button.cpp(12): warning: use of old-style cast [-Wold-style-cast]
+  int k = GPIOA->IDR & (1<<12);
+          ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1323): note: expanded from macro 'GPIOA_BASE'
+#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+button.cpp(12): warning: use of old-style cast [-Wold-style-cast]
+  int k = GPIOA->IDR & (1<<12);
+          ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                             ^                ~~~~~~~~~~
+button.cpp(8): warning: no previous prototype for function 'button' [-Wmissing-prototypes]
+void button(void) {
+     ^
+button.cpp(8): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void button(void) {
+^
+static 
+5 warnings generated.
+compiling button.cpp...
+uart.cpp(5): warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+  Uart(USART_TypeDef *b) { base = b; ptr = 0; }
+                                           ^
+                                           nullptr
+uart.cpp(7): warning: use of old-style cast [-Wold-style-cast]
+    if (base->SR & USART_SR_TXE) {
+                   ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7698): note: expanded from macro 'USART_SR_TXE'
+#define  USART_SR_TXE                        ((uint16_t)0x0080)            /*!< Transmit Data Register Empty */
+                                              ^         ~~~~~~
+uart.cpp(10): warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+        else ptr = 0;
+                   ^
+                   nullptr
+uart.cpp(11): warning: use of old-style cast [-Wold-style-cast]
+      } else base->CR1 &= ~USART_CR1_TXEIE;
+                           ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7717): note: expanded from macro 'USART_CR1_TXEIE'
+#define  USART_CR1_TXEIE                     ((uint16_t)0x0080)            /*!< PE Interrupt Enable */
+                                              ^         ~~~~~~
+uart.cpp(17): warning: use of old-style cast [-Wold-style-cast]
+    base->CR1 |= USART_CR1_TXEIE;
+                 ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7717): note: expanded from macro 'USART_CR1_TXEIE'
+#define  USART_CR1_TXEIE                     ((uint16_t)0x0080)            /*!< PE Interrupt Enable */
+                                              ^         ~~~~~~
+uart.cpp(21): warning: use of old-style cast [-Wold-style-cast]
+    return base->SR & USART_SR_RXNE ? base->DR : -1;
+                      ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7696): note: expanded from macro 'USART_SR_RXNE'
+#define  USART_SR_RXNE                       ((uint16_t)0x0020)            /*!< Read Data Register Not Empty */
+                                              ^         ~~~~~~
+uart.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+} static uart2(USART2), uart3(USART3);
+               ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1308): note: expanded from macro 'USART2_BASE'
+#define USART2_BASE           (APB1PERIPH_BASE + 0x4400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+uart.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+} static uart2(USART2), uart3(USART3);
+               ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                             ^                 ~~~~~~~~~~~
+uart.cpp(26): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static uart2(USART2), uart3(USART3);
+         ^~~~~~~~~~~~~
+uart.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+} static uart2(USART2), uart3(USART3);
+                              ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1309): note: expanded from macro 'USART3_BASE'
+#define USART3_BASE           (APB1PERIPH_BASE + 0x4800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+uart.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+} static uart2(USART2), uart3(USART3);
+                              ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                             ^                 ~~~~~~~~~~~
+uart.cpp(26): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static uart2(USART2), uart3(USART3);
+                        ^~~~~~~~~~~~~
+uart.cpp(28): warning: no previous prototype for function 'uart2_print' [-Wmissing-prototypes]
+bool uart2_print(const char* p) { return uart2.print(p); }
+     ^
+uart.cpp(28): note: declare 'static' if the function is not intended to be used outside of this translation unit
+bool uart2_print(const char* p) { return uart2.print(p); }
+^
+static 
+uart.cpp(29): warning: no previous prototype for function 'uart3_print' [-Wmissing-prototypes]
+bool uart3_print(const char* p) { return uart3.print(p); }
+     ^
+uart.cpp(29): note: declare 'static' if the function is not intended to be used outside of this translation unit
+bool uart3_print(const char* p) { return uart3.print(p); }
+^
+static 
+uart.cpp(30): warning: no previous prototype for function 'uart2_read' [-Wmissing-prototypes]
+int uart2_read(void) { return uart2.read(); }
+    ^
+uart.cpp(30): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int uart2_read(void) { return uart2.read(); }
+^
+static 
+uart.cpp(31): warning: no previous prototype for function 'uart3_read' [-Wmissing-prototypes]
+int uart3_read(void) { return uart3.read(); }
+    ^
+uart.cpp(31): note: declare 'static' if the function is not intended to be used outside of this translation unit
+int uart3_read(void) { return uart3.read(); }
+^
+static 
+uart.cpp(33): warning: no previous prototype for function 'USART2_IRQHandler' [-Wmissing-prototypes]
+extern "C" void USART2_IRQHandler(void) { uart2.isr(); }
+                ^
+uart.cpp(33): note: declare 'static' if the function is not intended to be used outside of this translation unit
+extern "C" void USART2_IRQHandler(void) { uart2.isr(); }
+           ^
+           static 
+uart.cpp(34): warning: no previous prototype for function 'USART3_IRQHandler' [-Wmissing-prototypes]
+extern "C" void USART3_IRQHandler(void) { uart3.isr(); }
+                ^
+uart.cpp(34): note: declare 'static' if the function is not intended to be used outside of this translation unit
+extern "C" void USART3_IRQHandler(void) { uart3.isr(); }
+           ^
+           static 
+18 warnings generated.
+compiling uart.cpp...
+tim1.cpp(10): warning: padding class 'Timer' with 3 bytes to align 'last' [-Wpadded]
+  unsigned int last;
+               ^
+tim1.cpp(11): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static timer;
+         ^~~~~
+tim1.cpp(14): warning: use of old-style cast [-Wold-style-cast]
+  timer.left = TIM2->CNT;
+               ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1294): note: expanded from macro 'TIM2_BASE'
+#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(14): warning: use of old-style cast [-Wold-style-cast]
+  timer.left = TIM2->CNT;
+               ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+  timer.right = TIM4->CNT;
+                ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1296): note: expanded from macro 'TIM4_BASE'
+#define TIM4_BASE             (APB1PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+  timer.right = TIM4->CNT;
+                ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->SR &= ~TIM_SR_UIF;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->SR &= ~TIM_SR_UIF;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(16): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->SR &= ~TIM_SR_UIF;
+               ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4283): note: expanded from macro 'TIM_SR_UIF'
+#define  TIM_SR_UIF                          ((uint16_t)0x0001)            /*!< Update interrupt Flag */
+                                              ^         ~~~~~~
+tim1.cpp(18): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 |= SPI_CR2_TXEIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(18): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 |= SPI_CR2_TXEIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(18): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 |= SPI_CR2_TXEIE;
+               ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7538): note: expanded from macro 'SPI_CR2_TXEIE'
+#define  SPI_CR2_TXEIE                       ((uint8_t)0x80)               /*!< Tx buffer Empty Interrupt Enable */
+                                              ^        ~~~~
+tim1.cpp(13): warning: no previous prototype for function 'TIM1_UP_IRQHandler' [-Wmissing-prototypes]
+extern "C" void TIM1_UP_IRQHandler(void) {
+                ^
+tim1.cpp(13): note: declare 'static' if the function is not intended to be used outside of this translation unit
+extern "C" void TIM1_UP_IRQHandler(void) {
+           ^
+           static 
+tim1.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->CR2 & SPI_CR2_TXEIE)
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->CR2 & SPI_CR2_TXEIE)
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(24): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->CR2 & SPI_CR2_TXEIE)
+                  ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7538): note: expanded from macro 'SPI_CR2_TXEIE'
+#define  SPI_CR2_TXEIE                       ((uint8_t)0x80)               /*!< Tx buffer Empty Interrupt Enable */
+                                              ^        ~~~~
+tim1.cpp(25): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(25): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(25): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+                   ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7542): note: expanded from macro 'SPI_SR_TXE'
+#define  SPI_SR_TXE                          ((uint8_t)0x02)               /*!< Transmit buffer Empty */
+                                              ^        ~~~~
+tim1.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+      if (--timer.spi_cnt) SPI1->DR = 0xff;
+                           ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(26): warning: use of old-style cast [-Wold-style-cast]
+      if (--timer.spi_cnt) SPI1->DR = 0xff;
+                           ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+      else { SPI1->DR = 0; SPI1->CR2 &= ~SPI_CR2_TXEIE; }
+             ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+      else { SPI1->DR = 0; SPI1->CR2 &= ~SPI_CR2_TXEIE; }
+             ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+      else { SPI1->DR = 0; SPI1->CR2 &= ~SPI_CR2_TXEIE; }
+                           ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+      else { SPI1->DR = 0; SPI1->CR2 &= ~SPI_CR2_TXEIE; }
+                           ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(27): warning: use of old-style cast [-Wold-style-cast]
+      else { SPI1->DR = 0; SPI1->CR2 &= ~SPI_CR2_TXEIE; }
+                                         ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7538): note: expanded from macro 'SPI_CR2_TXEIE'
+#define  SPI_CR2_TXEIE                       ((uint8_t)0x80)               /*!< Tx buffer Empty Interrupt Enable */
+                                              ^        ~~~~
+tim1.cpp(29): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->SR & SPI_SR_RXNE) {
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(29): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->SR & SPI_SR_RXNE) {
+      ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(29): warning: use of old-style cast [-Wold-style-cast]
+  if (SPI1->SR & SPI_SR_RXNE) {
+                 ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7541): note: expanded from macro 'SPI_SR_RXNE'
+#define  SPI_SR_RXNE                         ((uint8_t)0x01)               /*!< Receive buffer Not Empty */
+                                              ^        ~~~~
+tim1.cpp(30): warning: use of old-style cast [-Wold-style-cast]
+    c = SPI1->DR;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(30): warning: use of old-style cast [-Wold-style-cast]
+    c = SPI1->DR;
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(30): warning: implicit conversion loses integer precision: 'volatile std::uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+    c = SPI1->DR;
+      ~ ~~~~~~^~
+tim1.cpp(32): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(32): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+        ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(32): warning: use of old-style cast [-Wold-style-cast]
+    if (SPI1->SR & SPI_SR_TXE) {
+                   ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7542): note: expanded from macro 'SPI_SR_TXE'
+#define  SPI_SR_TXE                          ((uint8_t)0x02)               /*!< Transmit buffer Empty */
+                                              ^        ~~~~
+tim1.cpp(22): warning: no previous prototype for function 'SPI1_IRQHandler' [-Wmissing-prototypes]
+extern "C" void SPI1_IRQHandler(void) {
+                ^
+tim1.cpp(22): note: declare 'static' if the function is not intended to be used outside of this translation unit
+extern "C" void SPI1_IRQHandler(void) {
+           ^
+           static 
+tim1.cpp(41): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB2ENR = RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN |
+  ^~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1451): note: expanded from macro 'RCC'
+#define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                                             ^~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1360): note: expanded from macro 'RCC_BASE'
+#define RCC_BASE              (AHBPERIPH_BASE + 0x1000)
+                               ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1292): note: expanded from macro 'AHBPERIPH_BASE'
+#define AHBPERIPH_BASE        (PERIPH_BASE + 0x20000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(41): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB2ENR = RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN |
+  ^~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1451): note: expanded from macro 'RCC'
+#define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                             ^               ~~~~~~~~
+tim1.cpp(41): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB2ENR = RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN |
+                 ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2065): note: expanded from macro 'RCC_APB2ENR_SPI1EN'
+#define  RCC_APB2ENR_SPI1EN                  ((uint32_t)0x00001000)         /*!< SPI 1 clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(41): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB2ENR = RCC_APB2ENR_SPI1EN | RCC_APB2ENR_TIM1EN |
+                                      ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2064): note: expanded from macro 'RCC_APB2ENR_TIM1EN'
+#define  RCC_APB2ENR_TIM1EN                  ((uint32_t)0x00000800)         /*!< TIM1 Timer clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(42): warning: use of old-style cast [-Wold-style-cast]
+    RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPAEN;
+    ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2058): note: expanded from macro 'RCC_APB2ENR_ADC1EN'
+#define  RCC_APB2ENR_ADC1EN                  ((uint32_t)0x00000200)         /*!< ADC 1 interface clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(42): warning: use of old-style cast [-Wold-style-cast]
+    RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPAEN;
+                         ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2055): note: expanded from macro 'RCC_APB2ENR_IOPBEN'
+#define  RCC_APB2ENR_IOPBEN                  ((uint32_t)0x00000008)         /*!< I/O port B clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(42): warning: use of old-style cast [-Wold-style-cast]
+    RCC_APB2ENR_ADC1EN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPAEN;
+                                              ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2054): note: expanded from macro 'RCC_APB2ENR_IOPAEN'
+#define  RCC_APB2ENR_IOPAEN                  ((uint32_t)0x00000004)         /*!< I/O port A clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(43): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB1ENR = RCC_APB1ENR_USART3EN | RCC_APB1ENR_USART2EN |
+  ^~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1451): note: expanded from macro 'RCC'
+#define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                                             ^~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1360): note: expanded from macro 'RCC_BASE'
+#define RCC_BASE              (AHBPERIPH_BASE + 0x1000)
+                               ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1292): note: expanded from macro 'AHBPERIPH_BASE'
+#define AHBPERIPH_BASE        (PERIPH_BASE + 0x20000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(43): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB1ENR = RCC_APB1ENR_USART3EN | RCC_APB1ENR_USART2EN |
+  ^~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1451): note: expanded from macro 'RCC'
+#define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                             ^               ~~~~~~~~
+tim1.cpp(43): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB1ENR = RCC_APB1ENR_USART3EN | RCC_APB1ENR_USART2EN |
+                 ^~~~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2113): note: expanded from macro 'RCC_APB1ENR_USART3EN'
+ #define  RCC_APB1ENR_USART3EN               ((uint32_t)0x00040000)        /*!< USART 3 clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(43): warning: use of old-style cast [-Wold-style-cast]
+  RCC->APB1ENR = RCC_APB1ENR_USART3EN | RCC_APB1ENR_USART2EN |
+                                        ^~~~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2100): note: expanded from macro 'RCC_APB1ENR_USART2EN'
+#define  RCC_APB1ENR_USART2EN                ((uint32_t)0x00020000)        /*!< USART 2 clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(44): warning: use of old-style cast [-Wold-style-cast]
+    RCC_APB1ENR_TIM4EN | RCC_APB1ENR_TIM2EN;
+    ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2111): note: expanded from macro 'RCC_APB1ENR_TIM4EN'
+ #define  RCC_APB1ENR_TIM4EN                 ((uint32_t)0x00000004)        /*!< Timer 4 clock enable */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(44): warning: use of old-style cast [-Wold-style-cast]
+    RCC_APB1ENR_TIM4EN | RCC_APB1ENR_TIM2EN;
+                         ^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(2097): note: expanded from macro 'RCC_APB1ENR_TIM2EN'
+#define  RCC_APB1ENR_TIM2EN                  ((uint32_t)0x00000001)        /*!< Timer 2 clock enabled*/
+                                              ^         ~~~~~~~~~~
+tim1.cpp(45): warning: use of old-style cast [-Wold-style-cast]
+  GPIOA->CRL = 0xa4a44a42;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1323): note: expanded from macro 'GPIOA_BASE'
+#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(45): warning: use of old-style cast [-Wold-style-cast]
+  GPIOA->CRL = 0xa4a44a42;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                             ^                ~~~~~~~~~~
+tim1.cpp(46): warning: use of old-style cast [-Wold-style-cast]
+  GPIOA->CRH = 0x4444a4aa;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1323): note: expanded from macro 'GPIOA_BASE'
+#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(46): warning: use of old-style cast [-Wold-style-cast]
+  GPIOA->CRH = 0x4444a4aa;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                             ^                ~~~~~~~~~~
+tim1.cpp(47): warning: use of old-style cast [-Wold-style-cast]
+  GPIOB->CRL = 0x42444440;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1324): note: expanded from macro 'GPIOB_BASE'
+#define GPIOB_BASE            (APB2PERIPH_BASE + 0x0C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(47): warning: use of old-style cast [-Wold-style-cast]
+  GPIOB->CRL = 0x42444440;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                             ^                ~~~~~~~~~~
+tim1.cpp(48): warning: use of old-style cast [-Wold-style-cast]
+  GPIOB->CRH = 0xaaa24a44;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1324): note: expanded from macro 'GPIOB_BASE'
+#define GPIOB_BASE            (APB2PERIPH_BASE + 0x0C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(48): warning: use of old-style cast [-Wold-style-cast]
+  GPIOB->CRH = 0xaaa24a44;
+  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                             ^                ~~~~~~~~~~
+tim1.cpp(49): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->DIER = TIM_DIER_UIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(49): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->DIER = TIM_DIER_UIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(49): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->DIER = TIM_DIER_UIE;
+               ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4266): note: expanded from macro 'TIM_DIER_UIE'
+#define  TIM_DIER_UIE                        ((uint16_t)0x0001)            /*!< Update interrupt enable */
+                                              ^         ~~~~~~
+tim1.cpp(50): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->PSC = 3;                 //18 MHz = 72/(3+1)
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(50): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->PSC = 3;                 //18 MHz = 72/(3+1)
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(51): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->ARR = 44999;             //2.5 ms
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(51): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->ARR = 44999;             //2.5 ms
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(52): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCMR1 = 0x6868;          //ch1 and ch2: PWM preload
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(52): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCMR1 = 0x6868;          //ch1 and ch2: PWM preload
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(53): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER = TIM_CCER_CC3P;    //falling edge
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(53): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER = TIM_CCER_CC3P;    //falling edge
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(53): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER = TIM_CCER_CC3P;    //falling edge
+               ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4418): note: expanded from macro 'TIM_CCER_CC3P'
+#define  TIM_CCER_CC3P                       ((uint16_t)0x0200)            /*!< Capture/Compare 3 output Polarity */
+                                              ^         ~~~~~~
+tim1.cpp(54): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->BDTR = TIM_BDTR_MOE;     //master output enable
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(54): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->BDTR = TIM_BDTR_MOE;     //master output enable
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(54): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->BDTR = TIM_BDTR_MOE;     //master output enable
+               ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4469): note: expanded from macro 'TIM_BDTR_MOE'
+#define  TIM_BDTR_MOE                        ((uint16_t)0x8000)            /*!< Main Output enable */
+                                              ^         ~~~~~~
+tim1.cpp(55): warning: use of old-style cast [-Wold-style-cast]
+  USART2->BRR = 3750;                 //9600
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1308): note: expanded from macro 'USART2_BASE'
+#define USART2_BASE           (APB1PERIPH_BASE + 0x4400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(55): warning: use of old-style cast [-Wold-style-cast]
+  USART2->BRR = 3750;                 //9600
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(56): warning: use of old-style cast [-Wold-style-cast]
+  USART3->BRR = 313;                  //115200
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1309): note: expanded from macro 'USART3_BASE'
+#define USART3_BASE           (APB1PERIPH_BASE + 0x4800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(56): warning: use of old-style cast [-Wold-style-cast]
+  USART3->BRR = 313;                  //115200
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1308): note: expanded from macro 'USART2_BASE'
+#define USART2_BASE           (APB1PERIPH_BASE + 0x4400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+                ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1309): note: expanded from macro 'USART3_BASE'
+#define USART3_BASE           (APB1PERIPH_BASE + 0x4800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+                ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+                              ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7713): note: expanded from macro 'USART_CR1_TE'
+#define  USART_CR1_TE                        ((uint16_t)0x0008)            /*!< Transmitter Enable */
+                                              ^         ~~~~~~
+tim1.cpp(57): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 = USART3->CR1 = USART_CR1_TE | USART_CR1_RE;
+                                             ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7712): note: expanded from macro 'USART_CR1_RE'
+#define  USART_CR1_RE                        ((uint16_t)0x0004)            /*!< Receiver Enable */
+                                              ^         ~~~~~~
+tim1.cpp(58): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->SMPR2 = 0x07000000;           //SMP8=111 (239.5 cycles)
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1330): note: expanded from macro 'ADC1_BASE'
+#define ADC1_BASE             (APB2PERIPH_BASE + 0x2400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(58): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->SMPR2 = 0x07000000;           //SMP8=111 (239.5 cycles)
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(59): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->SQR3 = 8;                     //ch8
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1330): note: expanded from macro 'ADC1_BASE'
+#define ADC1_BASE             (APB2PERIPH_BASE + 0x2400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(59): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->SQR3 = 8;                     //ch8
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(60): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 = SPI_CR2_RXNEIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(60): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 = SPI_CR2_RXNEIE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(60): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR2 = SPI_CR2_RXNEIE;
+              ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7537): note: expanded from macro 'SPI_CR2_RXNEIE'
+#define  SPI_CR2_RXNEIE                      ((uint8_t)0x40)               /*!< RX buffer Not Empty Interrupt Enable */
+                                              ^        ~~~~
+tim1.cpp(61): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 = SPI_CR1_CPOL | SPI_CR1_MSTR |
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(61): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 = SPI_CR1_CPOL | SPI_CR1_MSTR |
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(61): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 = SPI_CR1_CPOL | SPI_CR1_MSTR |
+              ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7513): note: expanded from macro 'SPI_CR1_CPOL'
+#define  SPI_CR1_CPOL                        ((uint16_t)0x0002)            /*!< Clock Polarity */
+                                              ^         ~~~~~~
+tim1.cpp(61): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 = SPI_CR1_CPOL | SPI_CR1_MSTR |
+                             ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7514): note: expanded from macro 'SPI_CR1_MSTR'
+#define  SPI_CR1_MSTR                        ((uint16_t)0x0004)            /*!< Master Selection */
+                                              ^         ~~~~~~
+tim1.cpp(62): warning: use of old-style cast [-Wold-style-cast]
+    SPI_CR1_BR | SPI_CR1_SSM | SPI_CR1_SSI;
+    ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7516): note: expanded from macro 'SPI_CR1_BR'
+#define  SPI_CR1_BR                          ((uint16_t)0x0038)            /*!< BR[2:0] bits (Baud Rate Control) */
+                                              ^         ~~~~~~
+tim1.cpp(62): warning: use of old-style cast [-Wold-style-cast]
+    SPI_CR1_BR | SPI_CR1_SSM | SPI_CR1_SSI;
+                 ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7524): note: expanded from macro 'SPI_CR1_SSM'
+#define  SPI_CR1_SSM                         ((uint16_t)0x0200)            /*!< Software slave management */
+                                              ^         ~~~~~~
+tim1.cpp(62): warning: use of old-style cast [-Wold-style-cast]
+    SPI_CR1_BR | SPI_CR1_SSM | SPI_CR1_SSI;
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7523): note: expanded from macro 'SPI_CR1_SSI'
+#define  SPI_CR1_SSI                         ((uint16_t)0x0100)            /*!< Internal slave select */
+                                              ^         ~~~~~~
+tim1.cpp(63): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->SMCR = TIM4->SMCR = 0x67;       //TI2FP2
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1294): note: expanded from macro 'TIM2_BASE'
+#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(63): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->SMCR = TIM4->SMCR = 0x67;       //TI2FP2
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(63): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->SMCR = TIM4->SMCR = 0x67;       //TI2FP2
+               ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1296): note: expanded from macro 'TIM4_BASE'
+#define TIM4_BASE             (APB1PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(63): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->SMCR = TIM4->SMCR = 0x67;       //TI2FP2
+               ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(64): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CCMR1 = TIM2->CCMR1 = 0x100;    //CC2 as input, IC2 mapped on TI2
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1294): note: expanded from macro 'TIM2_BASE'
+#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(64): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CCMR1 = TIM2->CCMR1 = 0x100;    //CC2 as input, IC2 mapped on TI2
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(64): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CCMR1 = TIM2->CCMR1 = 0x100;    //CC2 as input, IC2 mapped on TI2
+                ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1294): note: expanded from macro 'TIM2_BASE'
+#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(64): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CCMR1 = TIM2->CCMR1 = 0x100;    //CC2 as input, IC2 mapped on TI2
+                ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(69): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 |= USART_CR1_UE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1308): note: expanded from macro 'USART2_BASE'
+#define USART2_BASE           (APB1PERIPH_BASE + 0x4400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(69): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 |= USART_CR1_UE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1402): note: expanded from macro 'USART2'
+#define USART2              ((USART_TypeDef *) USART2_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(69): warning: use of old-style cast [-Wold-style-cast]
+  USART2->CR1 |= USART_CR1_UE;
+                 ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7723): note: expanded from macro 'USART_CR1_UE'
+#define  USART_CR1_UE                        ((uint16_t)0x2000)            /*!< USART Enable */
+                                              ^         ~~~~~~
+tim1.cpp(70): warning: use of old-style cast [-Wold-style-cast]
+  USART3->CR1 |= USART_CR1_UE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1309): note: expanded from macro 'USART3_BASE'
+#define USART3_BASE           (APB1PERIPH_BASE + 0x4800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(70): warning: use of old-style cast [-Wold-style-cast]
+  USART3->CR1 |= USART_CR1_UE;
+  ^~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1403): note: expanded from macro 'USART3'
+#define USART3              ((USART_TypeDef *) USART3_BASE)
+                             ^                 ~~~~~~~~~~~
+tim1.cpp(70): warning: use of old-style cast [-Wold-style-cast]
+  USART3->CR1 |= USART_CR1_UE;
+                 ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7723): note: expanded from macro 'USART_CR1_UE'
+#define  USART_CR1_UE                        ((uint16_t)0x2000)            /*!< USART Enable */
+                                              ^         ~~~~~~
+tim1.cpp(71): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 |= SPI_CR1_SPE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1333): note: expanded from macro 'SPI1_BASE'
+#define SPI1_BASE             (APB2PERIPH_BASE + 0x3000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(71): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 |= SPI_CR1_SPE;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1426): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(71): warning: use of old-style cast [-Wold-style-cast]
+  SPI1->CR1 |= SPI_CR1_SPE;
+               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(7521): note: expanded from macro 'SPI_CR1_SPE'
+#define  SPI_CR1_SPE                         ((uint16_t)0x0040)            /*!< SPI Enable */
+                                              ^         ~~~~~~
+tim1.cpp(72): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CR1 = TIM4->CR1 = TIM_CR1_CEN;  //turn on timers
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1294): note: expanded from macro 'TIM2_BASE'
+#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(72): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CR1 = TIM4->CR1 = TIM_CR1_CEN;  //turn on timers
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1388): note: expanded from macro 'TIM2'
+#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(72): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CR1 = TIM4->CR1 = TIM_CR1_CEN;  //turn on timers
+              ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1296): note: expanded from macro 'TIM4_BASE'
+#define TIM4_BASE             (APB1PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1290): note: expanded from macro 'APB1PERIPH_BASE'
+#define APB1PERIPH_BASE       PERIPH_BASE
+                              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(72): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CR1 = TIM4->CR1 = TIM_CR1_CEN;  //turn on timers
+              ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1390): note: expanded from macro 'TIM4'
+#define TIM4                ((TIM_TypeDef *) TIM4_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(72): warning: use of old-style cast [-Wold-style-cast]
+  TIM2->CR1 = TIM4->CR1 = TIM_CR1_CEN;  //turn on timers
+                          ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4204): note: expanded from macro 'TIM_CR1_CEN'
+#define  TIM_CR1_CEN                         ((uint16_t)0x0001)            /*!< Counter enable */
+                                              ^         ~~~~~~
+tim1.cpp(73): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CR1 = TIM_CR1_CEN;              //timer on
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(73): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CR1 = TIM_CR1_CEN;              //timer on
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(73): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CR1 = TIM_CR1_CEN;              //timer on
+              ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4204): note: expanded from macro 'TIM_CR1_CEN'
+#define  TIM_CR1_CEN                         ((uint16_t)0x0001)            /*!< Counter enable */
+                                              ^         ~~~~~~
+tim1.cpp(81): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->CR2 = ADC_CR2_ADON;      //ADC start convert
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1330): note: expanded from macro 'ADC1_BASE'
+#define ADC1_BASE             (APB2PERIPH_BASE + 0x2400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(81): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->CR2 = ADC_CR2_ADON;      //ADC start convert
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(81): warning: use of old-style cast [-Wold-style-cast]
+  ADC1->CR2 = ADC_CR2_ADON;      //ADC start convert
+              ^~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(3750): note: expanded from macro 'ADC_CR2_ADON'
+#define  ADC_CR2_ADON                        ((uint32_t)0x00000001)        /*!< A/D Converter ON / OFF */
+                                              ^         ~~~~~~~~~~
+tim1.cpp(86): warning: no previous prototype for function 'wait' [-Wmissing-prototypes]
+void wait(unsigned int i) {
+     ^
+tim1.cpp(86): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void wait(unsigned int i) {
+^
+static 
+tim1.cpp(93): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCR1 = i;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(93): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCR1 = i;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(93): warning: implicit conversion loses integer precision: 'unsigned int' to 'std::uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  TIM1->CCR1 = i;
+             ~ ^
+tim1.cpp(92): warning: no previous prototype for function 'pwmLeft' [-Wmissing-prototypes]
+void pwmLeft(unsigned int i) {    //input must be lest than 45000
+     ^
+tim1.cpp(92): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void pwmLeft(unsigned int i) {    //input must be lest than 45000
+^
+static 
+tim1.cpp(97): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCR2 = i;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(97): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCR2 = i;
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(97): warning: implicit conversion loses integer precision: 'unsigned int' to 'std::uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  TIM1->CCR2 = i;
+             ~ ^
+tim1.cpp(96): warning: no previous prototype for function 'pwmRight' [-Wmissing-prototypes]
+void pwmRight(unsigned int i) {   //input must be lest than 45000
+     ^
+tim1.cpp(96): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void pwmRight(unsigned int i) {   //input must be lest than 45000
+^
+static 
+tim1.cpp(101): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC1NE | TIM_CCER_CC1E);
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(101): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC1NE | TIM_CCER_CC1E);
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(101): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC1NE | TIM_CCER_CC1E);
+                  ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4411): note: expanded from macro 'TIM_CCER_CC1NE'
+#define  TIM_CCER_CC1NE                      ((uint16_t)0x0004)            /*!< Capture/Compare 1 Complementary output enable */
+                                              ^         ~~~~~~
+tim1.cpp(101): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC1NE | TIM_CCER_CC1E);
+                                   ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4409): note: expanded from macro 'TIM_CCER_CC1E'
+#define  TIM_CCER_CC1E                       ((uint16_t)0x0001)            /*!< Capture/Compare 1 output enable */
+                                              ^         ~~~~~~
+tim1.cpp(102): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC1E;
+         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(102): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC1E;
+         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(102): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC1E;
+                       ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4409): note: expanded from macro 'TIM_CCER_CC1E'
+#define  TIM_CCER_CC1E                       ((uint16_t)0x0001)            /*!< Capture/Compare 1 output enable */
+                                              ^         ~~~~~~
+tim1.cpp(103): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC1NE;
+       ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(103): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC1NE;
+       ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(103): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC1NE;
+                     ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4411): note: expanded from macro 'TIM_CCER_CC1NE'
+#define  TIM_CCER_CC1NE                      ((uint16_t)0x0004)            /*!< Capture/Compare 1 Complementary output enable */
+                                              ^         ~~~~~~
+tim1.cpp(100): warning: no previous prototype for function 'setLeft' [-Wmissing-prototypes]
+void setLeft(bool b) {             //true-forward
+     ^
+tim1.cpp(100): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void setLeft(bool b) {             //true-forward
+^
+static 
+tim1.cpp(107): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC2NE | TIM_CCER_CC2E);
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(107): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC2NE | TIM_CCER_CC2E);
+  ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(107): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC2NE | TIM_CCER_CC2E);
+                  ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4415): note: expanded from macro 'TIM_CCER_CC2NE'
+#define  TIM_CCER_CC2NE                      ((uint16_t)0x0040)            /*!< Capture/Compare 2 Complementary output enable */
+                                              ^         ~~~~~~
+tim1.cpp(107): warning: use of old-style cast [-Wold-style-cast]
+  TIM1->CCER &= ~(TIM_CCER_CC2NE | TIM_CCER_CC2E);
+                                   ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4413): note: expanded from macro 'TIM_CCER_CC2E'
+#define  TIM_CCER_CC2E                       ((uint16_t)0x0010)            /*!< Capture/Compare 2 output enable */
+                                              ^         ~~~~~~
+tim1.cpp(108): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC2NE;
+         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(108): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC2NE;
+         ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(108): warning: use of old-style cast [-Wold-style-cast]
+  if (b) TIM1->CCER |= TIM_CCER_CC2NE;
+                       ^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4415): note: expanded from macro 'TIM_CCER_CC2NE'
+#define  TIM_CCER_CC2NE                      ((uint16_t)0x0040)            /*!< Capture/Compare 2 Complementary output enable */
+                                              ^         ~~~~~~
+tim1.cpp(109): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC2E;
+       ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1332): note: expanded from macro 'TIM1_BASE'
+#define TIM1_BASE             (APB2PERIPH_BASE + 0x2C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(109): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC2E;
+       ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1425): note: expanded from macro 'TIM1'
+#define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(109): warning: use of old-style cast [-Wold-style-cast]
+  else TIM1->CCER |= TIM_CCER_CC2E;
+                     ^~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(4413): note: expanded from macro 'TIM_CCER_CC2E'
+#define  TIM_CCER_CC2E                       ((uint16_t)0x0010)            /*!< Capture/Compare 2 output enable */
+                                              ^         ~~~~~~
+tim1.cpp(106): warning: no previous prototype for function 'setRight' [-Wmissing-prototypes]
+void setRight(bool b) {            //true-forward
+     ^
+tim1.cpp(106): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void setRight(bool b) {            //true-forward
+^
+static 
+tim1.cpp(112): warning: use of old-style cast [-Wold-style-cast]
+unsigned int getADC(void) { return ADC1->DR; }
+                                   ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                                             ^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1330): note: expanded from macro 'ADC1_BASE'
+#define ADC1_BASE             (APB2PERIPH_BASE + 0x2400)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+tim1.cpp(112): warning: use of old-style cast [-Wold-style-cast]
+unsigned int getADC(void) { return ADC1->DR; }
+                                   ^~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1423): note: expanded from macro 'ADC1'
+#define ADC1                ((ADC_TypeDef *) ADC1_BASE)
+                             ^               ~~~~~~~~~
+tim1.cpp(112): warning: no previous prototype for function 'getADC' [-Wmissing-prototypes]
+unsigned int getADC(void) { return ADC1->DR; }
+             ^
+tim1.cpp(112): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned int getADC(void) { return ADC1->DR; }
+^
+static 
+tim1.cpp(113): warning: no previous prototype for function 'getPath' [-Wmissing-prototypes]
+char getPath(void) { return timer.path; }
+     ^
+tim1.cpp(113): note: declare 'static' if the function is not intended to be used outside of this translation unit
+char getPath(void) { return timer.path; }
+^
+static 
+tim1.cpp(114): warning: no previous prototype for function 'getLeft' [-Wmissing-prototypes]
+unsigned int getLeft(void) { return timer.left; }
+             ^
+tim1.cpp(114): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned int getLeft(void) { return timer.left; }
+^
+static 
+tim1.cpp(115): warning: no previous prototype for function 'getRight' [-Wmissing-prototypes]
+unsigned int getRight(void) { return timer.right; }
+             ^
+tim1.cpp(115): note: declare 'static' if the function is not intended to be used outside of this translation unit
+unsigned int getRight(void) { return timer.right; }
+^
+static 
+161 warnings generated.
+compiling tim1.cpp...
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+              ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1324): note: expanded from macro 'GPIOB_BASE'
+#define GPIOB_BASE            (APB2PERIPH_BASE + 0x0C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+              ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                             ^                ~~~~~~~~~~
+led.cpp(14): warning: padding class 'Led' with 3 bytes to align 'period' [-Wpadded]
+  unsigned int period, count;
+               ^
+led.cpp(15): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+         ^~~~~~~~~~~~~~~
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                                ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1324): note: expanded from macro 'GPIOB_BASE'
+#define GPIOB_BASE            (APB2PERIPH_BASE + 0x0C00)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                                ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1417): note: expanded from macro 'GPIOB'
+#define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+                             ^                ~~~~~~~~~~
+led.cpp(15): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                          ^~~~~~~~~~~~~~~
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                                                  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                                              ^~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1323): note: expanded from macro 'GPIOA_BASE'
+#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)
+                               ^~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'APB2PERIPH_BASE'
+#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)
+                               ^~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1282): note: expanded from macro 'PERIPH_BASE'
+#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
+                               ^         ~~~~~~~~~~
+led.cpp(15): warning: use of old-style cast [-Wold-style-cast]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                                                  ^~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1416): note: expanded from macro 'GPIOA'
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+                             ^                ~~~~~~~~~~
+led.cpp(15): warning: declaration requires a global constructor [-Wglobal-constructors]
+} static blue(GPIOB, 12), green(GPIOB, 6), yellow(GPIOA, 0);
+                                           ^~~~~~~~~~~~~~~~
+led.cpp(26): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    if (pin == 1<<12) base->BRR = pin; else base->BSRR = pin;
+                                ~ ^~~
+led.cpp(26): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    if (pin == 1<<12) base->BRR = pin; else base->BSRR = pin;
+                                                       ~ ^~~
+led.cpp(29): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    if (pin == 1<<12) base->BSRR = pin; else base->BRR = pin;
+                                 ~ ^~~
+led.cpp(29): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+    if (pin == 1<<12) base->BSRR = pin; else base->BRR = pin;
+                                                       ~ ^~~
+led.cpp(41): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  if (base->ODR & pin) base->BRR = pin; else base->BSRR = pin;
+                ~ ^~~
+led.cpp(41): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  if (base->ODR & pin) base->BRR = pin; else base->BSRR = pin;
+                                 ~ ^~~
+led.cpp(41): warning: implicit conversion changes signedness: 'int' to 'std::uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  if (base->ODR & pin) base->BRR = pin; else base->BSRR = pin;
+                                                        ~ ^~~
+led.cpp(44): warning: no previous prototype for function 'led' [-Wmissing-prototypes]
+void led(void) {
+     ^
+led.cpp(44): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void led(void) {
+^
+static 
+led.cpp(50): warning: no previous prototype for function 'led' [-Wmissing-prototypes]
+void led(led_color c, led_state s) {
+     ^
+led.cpp(50): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void led(led_color c, led_state s) {
+^
+static 
+19 warnings generated.
+compiling led.cpp...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_adc.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_adc.h(63): warning: padding struct 'ADC_InitTypeDef' with 2 bytes to align 'ADC_ExternalTrigConv' [-Wpadded]
+  uint32_t ADC_ExternalTrigConv;          /*!< Defines the external trigger used to start the analog
+           ^
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_adc.h(49): warning: padding size of 'ADC_InitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+2 warnings generated.
+compiling stm32f10x_adc.c...
+compiling stm32f10x_bkp.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_cec.c(144): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmpreg = CEC->CFGR;
+         ~ ~~~~~^~~~
+1 warning generated.
+compiling stm32f10x_cec.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_can.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_can.h(144): warning: padding size of 'CanTxMsg' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_can.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_exti.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_exti.h(75): warning: padding size of 'EXTI_InitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_exti.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_i2c.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_i2c.h(49): warning: padding size of 'I2C_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_rtc.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_sdio.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_sdio.h(45): warning: padding size of 'SDIO_InitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f10x_sdio.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_spi.h(86): warning: padding size of 'I2S_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(493): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = (uint16_t)1 << (uint16_t)itpos;
+         ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(838): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(844): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = 0x01 << itmask;
+         ~ ~~~~~^~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(890): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_spi.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_usart.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_usart.h(49): warning: padding size of 'USART_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_usart.c(1043): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = ((uint16_t)0x01 << (uint16_t)bitpos);
+         ~  ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+compiling stm32f10x_usart.c...
+compiling stm32f10x_wwdg.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(22): warning: In file included from...
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(50): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(725): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+             TIM_BDTRInitStruct->TIM_Break | TIM_BDTRInitStruct->TIM_BreakPolarity |
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(1982): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2012): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCNE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2057): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp1 = CCER_CCE_Set << (uint16_t)TIM_Channel;
+       ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_tim.c...
+linking...
+Program Size: Code=3212 RO-data=276 RW-data=8 ZI-data=1768  
+FromELF: creating hex file...
+".\Objects\sr04+RemoteCar.axf" - 0 Error(s), 275 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: ADC Version: 3.6.0
+   * Component: BKP Version: 3.6.0
+   * Component: CAN Version: 3.6.0
+   * Component: CEC Version: 3.6.0
+   * Component: CRC Version: 3.6.0
+   * Component: DAC Version: 3.6.0
+   * Component: DBGMCU Version: 3.6.0
+   * Component: DMA Version: 3.6.0
+   * Component: EXTI Version: 3.6.0
+   * Component: FSMC Version: 3.6.0
+   * Component: Flash Version: 3.6.0
+   * Component: Framework Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
+   * Component: I2C Version: 3.6.0
+   * Component: IWDG Version: 3.6.0
+   * Component: PWR Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+   * Component: RTC Version: 3.6.0
+   * Component: SDIO Version: 3.6.0
+   * Component: SPI Version: 3.6.0
+   * Component: TIM Version: 3.6.0
+   * Component: USART Version: 3.6.0
+   * Component: WWDG Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/marco/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include
+  C:/Users/marco/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_adc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_adc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:BKP:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_bkp.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_bkp.h
+
+   * Component: Keil::Device:StdPeriph Drivers:CAN:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_can.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_can.c
+
+   * Component: Keil::Device:StdPeriph Drivers:CEC:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_cec.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_cec.c
+
+   * Component: Keil::Device:StdPeriph Drivers:CRC:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_crc.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_crc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DAC:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_dac.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_dac.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DBGMCU:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_dbgmcu.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_dbgmcu.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_dma.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_dma.c
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_exti.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_exti.c
+
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_fsmc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_fsmc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_flash.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_flash.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
+      Source file:   Device/StdPeriph_Driver/src/misc.c
+      Include file:  Device/StdPeriph_Driver/inc/misc.h
+      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_i2c.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_i2c.c
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_iwdg.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_iwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:PWR:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_pwr.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_pwr.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rtc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_rtc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_sdio.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_sdio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_spi.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_spi.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_tim.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_usart.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_usart.c
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:3.6.0
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_wwdg.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_wwdg.h
+Build Time Elapsed:  00:00:26
+</pre>
+</body>
+</html>
